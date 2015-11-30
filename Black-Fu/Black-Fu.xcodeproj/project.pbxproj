@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37971C0C024C003A4451 /* AppDelegate.swift */; };
+		EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37991C0C024C003A4451 /* ViewController.swift */; };
+		EC9F379D1C0C024C003A4451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9F379B1C0C024C003A4451 /* Main.storyboard */; };
+		EC9F37A01C0C024C003A4451 /* Black_Fu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC9F379E1C0C024C003A4451 /* Black_Fu.xcdatamodeld */; };
+		EC9F37A21C0C024C003A4451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9F37A11C0C024C003A4451 /* Assets.xcassets */; };
+		EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */; };
+		EC9F37B01C0C024C003A4451 /* Black_FuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */; };
+		EC9F37BB1C0C024C003A4451 /* Black_FuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC9F37AC1C0C024C003A4451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9F378C1C0C024C003A4451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9F37931C0C024C003A4451;
+			remoteInfo = "Black-Fu";
+		};
+		EC9F37B71C0C024C003A4451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9F378C1C0C024C003A4451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9F37931C0C024C003A4451;
+			remoteInfo = "Black-Fu";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC9F37941C0C024C003A4451 /* 黑心富.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黑心富.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9F37971C0C024C003A4451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC9F37991C0C024C003A4451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC9F379C1C0C024C003A4451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC9F379F1C0C024C003A4451 /* Black_Fu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Black_Fu.xcdatamodel; sourceTree = "<group>"; };
+		EC9F37A11C0C024C003A4451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC9F37A41C0C024C003A4451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC9F37A61C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9F37AB1C0C024C003A4451 /* Black-FuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-FuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_FuTests.swift; sourceTree = "<group>"; };
+		EC9F37B11C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-FuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_FuUITests.swift; sourceTree = "<group>"; };
+		EC9F37BC1C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC9F37911C0C024C003A4451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37A81C0C024C003A4451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37B31C0C024C003A4451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC9F378B1C0C024C003A4451 = {
+			isa = PBXGroup;
+			children = (
+				EC9F37961C0C024C003A4451 /* Black-Fu */,
+				EC9F37AE1C0C024C003A4451 /* Black-FuTests */,
+				EC9F37B91C0C024C003A4451 /* Black-FuUITests */,
+				EC9F37951C0C024C003A4451 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC9F37951C0C024C003A4451 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC9F37941C0C024C003A4451 /* 黑心富.app */,
+				EC9F37AB1C0C024C003A4451 /* Black-FuTests.xctest */,
+				EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9F37961C0C024C003A4451 /* Black-Fu */ = {
+			isa = PBXGroup;
+			children = (
+				EC9F37971C0C024C003A4451 /* AppDelegate.swift */,
+				EC9F37991C0C024C003A4451 /* ViewController.swift */,
+				EC9F379B1C0C024C003A4451 /* Main.storyboard */,
+				EC9F37A11C0C024C003A4451 /* Assets.xcassets */,
+				EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */,
+				EC9F37A61C0C024C003A4451 /* Info.plist */,
+				EC9F379E1C0C024C003A4451 /* Black_Fu.xcdatamodeld */,
+			);
+			path = "Black-Fu";
+			sourceTree = "<group>";
+		};
+		EC9F37AE1C0C024C003A4451 /* Black-FuTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */,
+				EC9F37B11C0C024C003A4451 /* Info.plist */,
+			);
+			path = "Black-FuTests";
+			sourceTree = "<group>";
+		};
+		EC9F37B91C0C024C003A4451 /* Black-FuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */,
+				EC9F37BC1C0C024C003A4451 /* Info.plist */,
+			);
+			path = "Black-FuUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC9F37931C0C024C003A4451 /* Black-Fu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9F37BF1C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-Fu" */;
+			buildPhases = (
+				EC9F37901C0C024C003A4451 /* Sources */,
+				EC9F37911C0C024C003A4451 /* Frameworks */,
+				EC9F37921C0C024C003A4451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Black-Fu";
+			productName = "Black-Fu";
+			productReference = EC9F37941C0C024C003A4451 /* 黑心富.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC9F37AA1C0C024C003A4451 /* Black-FuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9F37C21C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuTests" */;
+			buildPhases = (
+				EC9F37A71C0C024C003A4451 /* Sources */,
+				EC9F37A81C0C024C003A4451 /* Frameworks */,
+				EC9F37A91C0C024C003A4451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9F37AD1C0C024C003A4451 /* PBXTargetDependency */,
+			);
+			name = "Black-FuTests";
+			productName = "Black-FuTests";
+			productReference = EC9F37AB1C0C024C003A4451 /* Black-FuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC9F37B51C0C024C003A4451 /* Black-FuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9F37C51C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuUITests" */;
+			buildPhases = (
+				EC9F37B21C0C024C003A4451 /* Sources */,
+				EC9F37B31C0C024C003A4451 /* Frameworks */,
+				EC9F37B41C0C024C003A4451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9F37B81C0C024C003A4451 /* PBXTargetDependency */,
+			);
+			name = "Black-FuUITests";
+			productName = "Black-FuUITests";
+			productReference = EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC9F378C1C0C024C003A4451 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = TWML;
+				TargetAttributes = {
+					EC9F37931C0C024C003A4451 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					EC9F37AA1C0C024C003A4451 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = EC9F37931C0C024C003A4451;
+					};
+					EC9F37B51C0C024C003A4451 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = EC9F37931C0C024C003A4451;
+					};
+				};
+			};
+			buildConfigurationList = EC9F378F1C0C024C003A4451 /* Build configuration list for PBXProject "Black-Fu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC9F378B1C0C024C003A4451;
+			productRefGroup = EC9F37951C0C024C003A4451 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC9F37931C0C024C003A4451 /* Black-Fu */,
+				EC9F37AA1C0C024C003A4451 /* Black-FuTests */,
+				EC9F37B51C0C024C003A4451 /* Black-FuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC9F37921C0C024C003A4451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */,
+				EC9F37A21C0C024C003A4451 /* Assets.xcassets in Resources */,
+				EC9F379D1C0C024C003A4451 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37A91C0C024C003A4451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37B41C0C024C003A4451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC9F37901C0C024C003A4451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9F37A01C0C024C003A4451 /* Black_Fu.xcdatamodeld in Sources */,
+				EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */,
+				EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37A71C0C024C003A4451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9F37B01C0C024C003A4451 /* Black_FuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9F37B21C0C024C003A4451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9F37BB1C0C024C003A4451 /* Black_FuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC9F37AD1C0C024C003A4451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9F37931C0C024C003A4451 /* Black-Fu */;
+			targetProxy = EC9F37AC1C0C024C003A4451 /* PBXContainerItemProxy */;
+		};
+		EC9F37B81C0C024C003A4451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9F37931C0C024C003A4451 /* Black-Fu */;
+			targetProxy = EC9F37B71C0C024C003A4451 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC9F379B1C0C024C003A4451 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9F379C1C0C024C003A4451 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9F37A41C0C024C003A4451 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC9F37BD1C0C024C003A4451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC9F37BE1C0C024C003A4451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC9F37C01C0C024C003A4451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Black-Fu/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
+				PRODUCT_NAME = "黑心富";
+			};
+			name = Debug;
+		};
+		EC9F37C11C0C024C003A4451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Black-Fu/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
+				PRODUCT_NAME = "黑心富";
+			};
+			name = Release;
+		};
+		EC9F37C31C0C024C003A4451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Black-FuTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-FuTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Black-Fu.app/Black-Fu";
+			};
+			name = Debug;
+		};
+		EC9F37C41C0C024C003A4451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Black-FuTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-FuTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Black-Fu.app/Black-Fu";
+			};
+			name = Release;
+		};
+		EC9F37C61C0C024C003A4451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Black-FuUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-FuUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Black-Fu";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EC9F37C71C0C024C003A4451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Black-FuUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-FuUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Black-Fu";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC9F378F1C0C024C003A4451 /* Build configuration list for PBXProject "Black-Fu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9F37BD1C0C024C003A4451 /* Debug */,
+				EC9F37BE1C0C024C003A4451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9F37BF1C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-Fu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9F37C01C0C024C003A4451 /* Debug */,
+				EC9F37C11C0C024C003A4451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC9F37C21C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9F37C31C0C024C003A4451 /* Debug */,
+				EC9F37C41C0C024C003A4451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC9F37C51C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9F37C61C0C024C003A4451 /* Debug */,
+				EC9F37C71C0C024C003A4451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC9F379E1C0C024C003A4451 /* Black_Fu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC9F379F1C0C024C003A4451 /* Black_Fu.xcdatamodel */,
+			);
+			currentVersion = EC9F379F1C0C024C003A4451 /* Black_Fu.xcdatamodel */;
+			path = Black_Fu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC9F378C1C0C024C003A4451 /* Project object */;
+}

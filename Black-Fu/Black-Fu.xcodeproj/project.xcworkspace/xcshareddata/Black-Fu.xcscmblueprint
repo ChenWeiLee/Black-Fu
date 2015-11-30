@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "721BB125E50498C1F1B01DC031CD2E919C785BA7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "721BB125E50498C1F1B01DC031CD2E919C785BA7" : 0,
+    "210CB819005DFFF42A87C931152C57B942239155" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CA55889E-CFB7-4D80-8929-5939A2AAFD5D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "721BB125E50498C1F1B01DC031CD2E919C785BA7" : "Black-Fu\/",
+    "210CB819005DFFF42A87C931152C57B942239155" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Black-Fu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Black-Fu\/Black-Fu.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.hq.hiiir:ecs_gropus\/ecs-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "210CB819005DFFF42A87C931152C57B942239155"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChenWeiLee\/Black-Fu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "721BB125E50498C1F1B01DC031CD2E919C785BA7"
+    }
+  ]
+}
