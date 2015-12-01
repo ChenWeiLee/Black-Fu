@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Fast-Search.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>EC9F37B51C0C024C003A4451</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECD791561C0DB5B900E91677</key>
 		<dict>
 			<key>primary</key>
 			<true/>

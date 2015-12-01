@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC9F37931C0C024C003A4451"
-               BuildableName = "Black-Fu.app"
+               BuildableName = "&#x9ed1;&#x5fc3;&#x5bcc;.app"
                BlueprintName = "Black-Fu"
                ReferencedContainer = "container:Black-Fu.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9F37931C0C024C003A4451"
-            BuildableName = "Black-Fu.app"
+            BuildableName = "&#x9ed1;&#x5fc3;&#x5bcc;.app"
             BlueprintName = "Black-Fu"
             ReferencedContainer = "container:Black-Fu.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9F37931C0C024C003A4451"
-            BuildableName = "Black-Fu.app"
+            BuildableName = "&#x9ed1;&#x5fc3;&#x5bcc;.app"
             BlueprintName = "Black-Fu"
             ReferencedContainer = "container:Black-Fu.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC9F37931C0C024C003A4451"
-            BuildableName = "Black-Fu.app"
+            BuildableName = "&#x9ed1;&#x5fc3;&#x5bcc;.app"
             BlueprintName = "Black-Fu"
             ReferencedContainer = "container:Black-Fu.xcodeproj">
          </BuildableReference>
