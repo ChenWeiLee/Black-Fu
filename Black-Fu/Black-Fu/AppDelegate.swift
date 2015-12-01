@@ -43,6 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        
+        return true
+    }
 
     // MARK: - Core Data stack
 

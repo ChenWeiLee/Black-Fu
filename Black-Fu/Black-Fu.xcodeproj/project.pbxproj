@@ -15,6 +15,10 @@
 		EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */; };
 		EC9F37B01C0C024C003A4451 /* Black_FuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */; };
 		EC9F37BB1C0C024C003A4451 /* Black_FuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */; };
+		ECD7915A1C0DB5B900E91677 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD791591C0DB5B900E91677 /* NotificationCenter.framework */; };
+		ECD7915D1C0DB5B900E91677 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */; };
+		ECD791601C0DB5B900E91677 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD7915E1C0DB5B900E91677 /* MainInterface.storyboard */; };
+		ECD791641C0DB5B900E91677 /* Fast-Search.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ECD791571C0DB5B900E91677 /* Fast-Search.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +36,28 @@
 			remoteGlobalIDString = EC9F37931C0C024C003A4451;
 			remoteInfo = "Black-Fu";
 		};
+		ECD791621C0DB5B900E91677 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9F378C1C0C024C003A4451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECD791561C0DB5B900E91677;
+			remoteInfo = "Fast-Search";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ECD791681C0DB5BA00E91677 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ECD791641C0DB5B900E91677 /* Fast-Search.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC9F37941C0C024C003A4451 /* 黑心富.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黑心富.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +74,11 @@
 		EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-FuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_FuUITests.swift; sourceTree = "<group>"; };
 		EC9F37BC1C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD791571C0DB5B900E91677 /* Fast-Search.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Fast-Search.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD791591C0DB5B900E91677 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		ECD7915F1C0DB5B900E91677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		ECD791611C0DB5B900E91677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +103,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ECD791541C0DB5B900E91677 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD7915A1C0DB5B900E91677 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +120,8 @@
 				EC9F37961C0C024C003A4451 /* Black-Fu */,
 				EC9F37AE1C0C024C003A4451 /* Black-FuTests */,
 				EC9F37B91C0C024C003A4451 /* Black-FuUITests */,
+				ECD7915B1C0DB5B900E91677 /* Fast-Search */,
+				ECD791581C0DB5B900E91677 /* Frameworks */,
 				EC9F37951C0C024C003A4451 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +132,7 @@
 				EC9F37941C0C024C003A4451 /* 黑心富.app */,
 				EC9F37AB1C0C024C003A4451 /* Black-FuTests.xctest */,
 				EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */,
+				ECD791571C0DB5B900E91677 /* Fast-Search.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +169,24 @@
 			path = "Black-FuUITests";
 			sourceTree = "<group>";
 		};
+		ECD791581C0DB5B900E91677 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECD791591C0DB5B900E91677 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECD7915B1C0DB5B900E91677 /* Fast-Search */ = {
+			isa = PBXGroup;
+			children = (
+				ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */,
+				ECD7915E1C0DB5B900E91677 /* MainInterface.storyboard */,
+				ECD791611C0DB5B900E91677 /* Info.plist */,
+			);
+			path = "Fast-Search";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,10 +197,12 @@
 				EC9F37901C0C024C003A4451 /* Sources */,
 				EC9F37911C0C024C003A4451 /* Frameworks */,
 				EC9F37921C0C024C003A4451 /* Resources */,
+				ECD791681C0DB5BA00E91677 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ECD791631C0DB5B900E91677 /* PBXTargetDependency */,
 			);
 			name = "Black-Fu";
 			productName = "Black-Fu";
@@ -184,6 +245,23 @@
 			productReference = EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ECD791561C0DB5B900E91677 /* Fast-Search */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECD791671C0DB5BA00E91677 /* Build configuration list for PBXNativeTarget "Fast-Search" */;
+			buildPhases = (
+				ECD791531C0DB5B900E91677 /* Sources */,
+				ECD791541C0DB5B900E91677 /* Frameworks */,
+				ECD791551C0DB5B900E91677 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fast-Search";
+			productName = "Fast-Search";
+			productReference = ECD791571C0DB5B900E91677 /* Fast-Search.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +283,9 @@
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = EC9F37931C0C024C003A4451;
 					};
+					ECD791561C0DB5B900E91677 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 				};
 			};
 			buildConfigurationList = EC9F378F1C0C024C003A4451 /* Build configuration list for PBXProject "Black-Fu" */;
@@ -223,6 +304,7 @@
 				EC9F37931C0C024C003A4451 /* Black-Fu */,
 				EC9F37AA1C0C024C003A4451 /* Black-FuTests */,
 				EC9F37B51C0C024C003A4451 /* Black-FuUITests */,
+				ECD791561C0DB5B900E91677 /* Fast-Search */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +331,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECD791551C0DB5B900E91677 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD791601C0DB5B900E91677 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +371,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ECD791531C0DB5B900E91677 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD7915D1C0DB5B900E91677 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +391,11 @@
 			isa = PBXTargetDependency;
 			target = EC9F37931C0C024C003A4451 /* Black-Fu */;
 			targetProxy = EC9F37B71C0C024C003A4451 /* PBXContainerItemProxy */;
+		};
+		ECD791631C0DB5B900E91677 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECD791561C0DB5B900E91677 /* Fast-Search */;
+			targetProxy = ECD791621C0DB5B900E91677 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +414,14 @@
 				EC9F37A41C0C024C003A4451 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ECD7915E1C0DB5B900E91677 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECD7915F1C0DB5B900E91677 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Black-Fu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
@@ -412,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Black-Fu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
@@ -467,6 +580,28 @@
 			};
 			name = Release;
 		};
+		ECD791651C0DB5BA00E91677 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Fast-Search/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu.Fast-Search";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ECD791661C0DB5BA00E91677 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Fast-Search/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu.Fast-Search";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,6 +621,7 @@
 				EC9F37C11C0C024C003A4451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC9F37C21C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +630,7 @@
 				EC9F37C41C0C024C003A4451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC9F37C51C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-FuUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +639,16 @@
 				EC9F37C71C0C024C003A4451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECD791671C0DB5BA00E91677 /* Build configuration list for PBXNativeTarget "Fast-Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECD791651C0DB5BA00E91677 /* Debug */,
+				ECD791661C0DB5BA00E91677 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
