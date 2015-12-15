@@ -11,6 +11,9 @@ import AVFoundation
 
 class ScanViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegate{
 
+    @IBOutlet var scanView: UIView!
+    @IBOutlet var backBtn: UIButton!
+    @IBOutlet var nextButton: UIButton!
     
     
     var captureSession:AVCaptureSession?
@@ -20,27 +23,32 @@ class ScanViewController: UIViewController , AVCaptureMetadataOutputObjectsDeleg
     let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var scanViewBack = UIButton(type: UIButtonType.Custom)
     
+    lazy var resoultView = UIView()
     
     // Added to support different barcodes
-    let supportedBarCodes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode]
+    let supportedBarCodes = [AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeQRCode]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.lightGrayColor()
         
-        scanViewBack.setTitle("Back", forState: UIControlState.Normal)
-        scanViewBack.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        scanViewBack.addTarget(self, action: "back", forControlEvents: UIControlEvents.TouchUpInside)
-        scanViewBack.frame = CGRectMake(0, 0, 100, 44)
-        scanViewBack.center = self.view.center
+        nextButton.enabled = false
+        nextButton.addTarget(self, action: "nextScan", forControlEvents: UIControlEvents.TouchUpInside)
+        backBtn.addTarget(self, action: "back", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.scanBarCode()
-        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        videoPreviewLayer?.frame = scanView.frame
+    }
+    override func viewDidDisappear(animated: Bool) {
+        videoPreviewLayer?.removeFromSuperlayer()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,6 +60,17 @@ class ScanViewController: UIViewController , AVCaptureMetadataOutputObjectsDeleg
     
     func back() {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func nextScan() {
+        captureSession?.startRunning()
+        qrCodeFrameView?.frame = CGRectZero
+        nextButton.enabled = false
+    }
+    
+    func resoultValue() {
+        
+        
     }
     
     
@@ -82,14 +101,11 @@ class ScanViewController: UIViewController , AVCaptureMetadataOutputObjectsDeleg
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            videoPreviewLayer?.frame = CGRectMake(0, 0, view.layer.bounds.size.width, 320)//view.layer.bounds
+            videoPreviewLayer?.frame = scanView.frame
             view.layer.addSublayer(videoPreviewLayer!)
             
             // Start video capture
             captureSession?.startRunning()
-            
-            // Move the message label to the top view
-            //            view.bringSubviewToFront(messageLabel)
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
@@ -138,6 +154,8 @@ class ScanViewController: UIViewController , AVCaptureMetadataOutputObjectsDeleg
             
             if metadataObj.stringValue != nil {
                 print(metadataObj.stringValue)
+                captureSession?.stopRunning()
+                nextButton.enabled = true
             }
         }
     }

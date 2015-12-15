@@ -15,6 +15,7 @@
 		EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */; };
 		EC9F37B01C0C024C003A4451 /* Black_FuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */; };
 		EC9F37BB1C0C024C003A4451 /* Black_FuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */; };
+		ECC65F8B1C0E874C003031CE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC65F8A1C0E874C003031CE /* ScanViewController.swift */; };
 		ECD7915A1C0DB5B900E91677 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD791591C0DB5B900E91677 /* NotificationCenter.framework */; };
 		ECD7915D1C0DB5B900E91677 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */; };
 		ECD791601C0DB5B900E91677 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD7915E1C0DB5B900E91677 /* MainInterface.storyboard */; };
@@ -74,6 +75,7 @@
 		EC9F37B61C0C024C003A4451 /* Black-FuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-FuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_FuUITests.swift; sourceTree = "<group>"; };
 		EC9F37BC1C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC65F8A1C0E874C003031CE /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		ECD791571C0DB5B900E91677 /* Fast-Search.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Fast-Search.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD791591C0DB5B900E91677 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				EC9F37971C0C024C003A4451 /* AppDelegate.swift */,
 				EC9F37991C0C024C003A4451 /* ViewController.swift */,
+				ECC65F8A1C0E874C003031CE /* ScanViewController.swift */,
 				EC9F379B1C0C024C003A4451 /* Main.storyboard */,
 				EC9F37A11C0C024C003A4451 /* Assets.xcassets */,
 				EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				TargetAttributes = {
 					EC9F37931C0C024C003A4451 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = VU6M4VS6KK;
 					};
 					EC9F37AA1C0C024C003A4451 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -352,6 +356,7 @@
 				EC9F37A01C0C024C003A4451 /* Black_Fu.xcdatamodeld in Sources */,
 				EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */,
 				EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */,
+				ECC65F8B1C0E874C003031CE /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Black-Fu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -524,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Black-Fu/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -13,6 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var isOpenUrl:Bool = false
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -45,6 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+//        isOpenUrl = true
+        
+       let nowView = (self.window?.rootViewController as! UINavigationController).visibleViewController
+        
+        nowView?.navigationController?.popToRootViewControllerAnimated(false)
+        
+        let nView = (self.window?.rootViewController as! UINavigationController).visibleViewController
+        let scanView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Scan")
+        
+        nView?.navigationController?.pushViewController(scanView, animated: true)
         
         return true
     }

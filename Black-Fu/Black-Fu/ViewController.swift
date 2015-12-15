@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     
-    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
     //MARK: - ViewController 生命週期
@@ -28,8 +27,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     // MARK: - Button Event
     
     @IBAction func scanBarcode(sender: AnyObject) {
-        let scanViewController = ScanViewController()
+        let scanViewController = self.storyboard!.instantiateViewControllerWithIdentifier("Scan") as! ScanViewController
         self.navigationController?.pushViewController(scanViewController, animated: true)
+    }
+    
+    // MARK: - UISearchBar Delegate
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
     }
     
     // MARK: - UITableView Delegate & DataSource
