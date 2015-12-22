@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="BarCode" representedClassName=".BarCode" syncable="YES">
+        <attribute name="barcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="productRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="barcodeRelationship" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Brand" representedClassName=".Brand" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="brandRelationship" inverseEntity="Company" syncable="YES"/>
+        <relationship name="productRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="brandRelationship" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Company" representedClassName=".Company" syncable="YES">
+        <attribute name="company_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="logoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brandRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="company" inverseEntity="Brand" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName=".Product" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="barcodeRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BarCode" inverseName="productRelationship" inverseEntity="BarCode" syncable="YES"/>
+        <relationship name="brandRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="productRelationship" inverseEntity="Brand" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Company" positionX="-425" positionY="-265" width="128" height="103"/>
+        <element name="Brand" positionX="-425" positionY="-109" width="128" height="118"/>
+        <element name="Product" positionX="-425" positionY="72" width="128" height="135"/>
+        <element name="BarCode" positionX="-423" positionY="288" width="128" height="75"/>
+    </elements>
 </model>
