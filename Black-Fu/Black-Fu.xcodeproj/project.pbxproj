@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1075065499990CA089A1140 /* Pods_Black_Fu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72F60D08B1A0F193DB44BFB /* Pods_Black_Fu.framework */; };
+		EC46E4661C2967FB00F80103 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4651C2967FA00F80103 /* CoreDataManager.swift */; };
+		EC46E4681C296A0100F80103 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC46E4671C296A0100F80103 /* CoreData.framework */; };
+		EC46E46A1C296AF700F80103 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC46E4691C296AF700F80103 /* libsqlite3.tbd */; };
+		EC46E4731C296CF600F80103 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E46B1C296CF600F80103 /* Product+CoreDataProperties.swift */; };
+		EC46E4741C296CF600F80103 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E46C1C296CF600F80103 /* Product.swift */; };
+		EC46E4751C296CF600F80103 /* Brand+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E46D1C296CF600F80103 /* Brand+CoreDataProperties.swift */; };
+		EC46E4761C296CF600F80103 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E46E1C296CF600F80103 /* Brand.swift */; };
+		EC46E4771C296CF600F80103 /* BarCode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E46F1C296CF600F80103 /* BarCode+CoreDataProperties.swift */; };
+		EC46E4781C296CF600F80103 /* BarCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4701C296CF600F80103 /* BarCode.swift */; };
+		EC46E4791C296CF600F80103 /* Company+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4711C296CF600F80103 /* Company+CoreDataProperties.swift */; };
+		EC46E47A1C296CF600F80103 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4721C296CF600F80103 /* Company.swift */; };
+		EC46E47E1C2974EC00F80103 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */; };
+		EC46E4801C297C3700F80103 /* IMG_3253.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EC46E47F1C297C3700F80103 /* IMG_3253.JPG */; };
+		EC856F951C3F5A7B00CEE69C /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC856F941C3F5A7B00CEE69C /* NewsWebViewController.swift */; };
 		EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37971C0C024C003A4451 /* AppDelegate.swift */; };
 		EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37991C0C024C003A4451 /* ViewController.swift */; };
 		EC9F379D1C0C024C003A4451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9F379B1C0C024C003A4451 /* Main.storyboard */; };
@@ -16,6 +31,7 @@
 		EC9F37B01C0C024C003A4451 /* Black_FuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37AF1C0C024C003A4451 /* Black_FuTests.swift */; };
 		EC9F37BB1C0C024C003A4451 /* Black_FuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */; };
 		ECC65F8B1C0E874C003031CE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC65F8A1C0E874C003031CE /* ScanViewController.swift */; };
+		ECC945641C329D4100EE166D /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC945631C329D4100EE166D /* NewListViewController.swift */; };
 		ECD7915A1C0DB5B900E91677 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD791591C0DB5B900E91677 /* NotificationCenter.framework */; };
 		ECD7915D1C0DB5B900E91677 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */; };
 		ECD791601C0DB5B900E91677 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECD7915E1C0DB5B900E91677 /* MainInterface.storyboard */; };
@@ -61,6 +77,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2BD1CD98B096C79BB1C6057B /* Pods-Black-Fu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black-Fu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu.debug.xcconfig"; sourceTree = "<group>"; };
+		A3E778DFC6189FD72DFC96EB /* Pods-Black-Fu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black-Fu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu.release.xcconfig"; sourceTree = "<group>"; };
+		D72F60D08B1A0F193DB44BFB /* Pods_Black_Fu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Black_Fu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC46E4651C2967FA00F80103 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "Black-Fu/CoreDataManager.swift"; sourceTree = "<group>"; };
+		EC46E4671C296A0100F80103 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC46E4691C296AF700F80103 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		EC46E46B1C296CF600F80103 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "ManagedObjct/Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC46E46C1C296CF600F80103 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = ManagedObjct/Product.swift; sourceTree = "<group>"; };
+		EC46E46D1C296CF600F80103 /* Brand+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Brand+CoreDataProperties.swift"; path = "ManagedObjct/Brand+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC46E46E1C296CF600F80103 /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Brand.swift; path = ManagedObjct/Brand.swift; sourceTree = "<group>"; };
+		EC46E46F1C296CF600F80103 /* BarCode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BarCode+CoreDataProperties.swift"; path = "ManagedObjct/BarCode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC46E4701C296CF600F80103 /* BarCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarCode.swift; path = ManagedObjct/BarCode.swift; sourceTree = "<group>"; };
+		EC46E4711C296CF600F80103 /* Company+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Company+CoreDataProperties.swift"; path = "ManagedObjct/Company+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EC46E4721C296CF600F80103 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = ManagedObjct/Company.swift; sourceTree = "<group>"; };
+		EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		EC46E47F1C297C3700F80103 /* IMG_3253.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_3253.JPG; path = ../../../../Downloads/IMG_3253.JPG; sourceTree = "<group>"; };
+		EC856F941C3F5A7B00CEE69C /* NewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
 		EC9F37941C0C024C003A4451 /* 黑心富.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黑心富.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9F37971C0C024C003A4451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC9F37991C0C024C003A4451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +109,7 @@
 		EC9F37BA1C0C024C003A4451 /* Black_FuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_FuUITests.swift; sourceTree = "<group>"; };
 		EC9F37BC1C0C024C003A4451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC65F8A1C0E874C003031CE /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		ECC945631C329D4100EE166D /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		ECD791571C0DB5B900E91677 /* Fast-Search.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Fast-Search.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD791591C0DB5B900E91677 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		ECD7915C1C0DB5B900E91677 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +122,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC46E46A1C296AF700F80103 /* libsqlite3.tbd in Frameworks */,
+				EC46E4681C296A0100F80103 /* CoreData.framework in Frameworks */,
+				A1075065499990CA089A1140 /* Pods_Black_Fu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,15 +153,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10B78B7D2D453EE7FE6A8F5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BD1CD98B096C79BB1C6057B /* Pods-Black-Fu.debug.xcconfig */,
+				A3E778DFC6189FD72DFC96EB /* Pods-Black-Fu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC46E47B1C296CFE00F80103 /* ManagerObject */ = {
+			isa = PBXGroup;
+			children = (
+				EC46E46B1C296CF600F80103 /* Product+CoreDataProperties.swift */,
+				EC46E46C1C296CF600F80103 /* Product.swift */,
+				EC46E46D1C296CF600F80103 /* Brand+CoreDataProperties.swift */,
+				EC46E46E1C296CF600F80103 /* Brand.swift */,
+				EC46E46F1C296CF600F80103 /* BarCode+CoreDataProperties.swift */,
+				EC46E4701C296CF600F80103 /* BarCode.swift */,
+				EC46E4711C296CF600F80103 /* Company+CoreDataProperties.swift */,
+				EC46E4721C296CF600F80103 /* Company.swift */,
+			);
+			name = ManagerObject;
+			sourceTree = "<group>";
+		};
+		EC46E47C1C296D2E00F80103 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EC46E47B1C296CFE00F80103 /* ManagerObject */,
+				EC46E4651C2967FA00F80103 /* CoreDataManager.swift */,
+				EC9F379E1C0C024C003A4451 /* Black_Fu.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		EC9F378B1C0C024C003A4451 = {
 			isa = PBXGroup;
 			children = (
+				EC46E47C1C296D2E00F80103 /* CoreData */,
 				EC9F37961C0C024C003A4451 /* Black-Fu */,
 				EC9F37AE1C0C024C003A4451 /* Black-FuTests */,
 				EC9F37B91C0C024C003A4451 /* Black-FuUITests */,
 				ECD7915B1C0DB5B900E91677 /* Fast-Search */,
 				ECD791581C0DB5B900E91677 /* Frameworks */,
 				EC9F37951C0C024C003A4451 /* Products */,
+				10B78B7D2D453EE7FE6A8F5D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,14 +215,16 @@
 		EC9F37961C0C024C003A4451 /* Black-Fu */ = {
 			isa = PBXGroup;
 			children = (
+				ECAA4F101C41734B00C05881 /* News */,
 				EC9F37971C0C024C003A4451 /* AppDelegate.swift */,
 				EC9F37991C0C024C003A4451 /* ViewController.swift */,
 				ECC65F8A1C0E874C003031CE /* ScanViewController.swift */,
-				EC9F379B1C0C024C003A4451 /* Main.storyboard */,
+				EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */,
 				EC9F37A11C0C024C003A4451 /* Assets.xcassets */,
+				EC9F379B1C0C024C003A4451 /* Main.storyboard */,
 				EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */,
 				EC9F37A61C0C024C003A4451 /* Info.plist */,
-				EC9F379E1C0C024C003A4451 /* Black_Fu.xcdatamodeld */,
+				EC46E47F1C297C3700F80103 /* IMG_3253.JPG */,
 			);
 			path = "Black-Fu";
 			sourceTree = "<group>";
@@ -172,10 +247,22 @@
 			path = "Black-FuUITests";
 			sourceTree = "<group>";
 		};
+		ECAA4F101C41734B00C05881 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				ECC945631C329D4100EE166D /* NewListViewController.swift */,
+				EC856F941C3F5A7B00CEE69C /* NewsWebViewController.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		ECD791581C0DB5B900E91677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC46E4691C296AF700F80103 /* libsqlite3.tbd */,
+				EC46E4671C296A0100F80103 /* CoreData.framework */,
 				ECD791591C0DB5B900E91677 /* NotificationCenter.framework */,
+				D72F60D08B1A0F193DB44BFB /* Pods_Black_Fu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,10 +284,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC9F37BF1C0C024C003A4451 /* Build configuration list for PBXNativeTarget "Black-Fu" */;
 			buildPhases = (
+				855BF3B9098156CDECE1C834 /* Check Pods Manifest.lock */,
 				EC9F37901C0C024C003A4451 /* Sources */,
 				EC9F37911C0C024C003A4451 /* Frameworks */,
 				EC9F37921C0C024C003A4451 /* Resources */,
 				ECD791681C0DB5BA00E91677 /* Embed App Extensions */,
+				ED3D0505D62023036BB4CA8B /* Embed Pods Frameworks */,
+				127C35C8FA0DE212D65D1F28 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC46E4801C297C3700F80103 /* IMG_3253.JPG in Resources */,
 				EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */,
 				EC9F37A21C0C024C003A4451 /* Assets.xcassets in Resources */,
 				EC9F379D1C0C024C003A4451 /* Main.storyboard in Resources */,
@@ -348,15 +439,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		127C35C8FA0DE212D65D1F28 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855BF3B9098156CDECE1C834 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3D0505D62023036BB4CA8B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC9F37901C0C024C003A4451 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC856F951C3F5A7B00CEE69C /* NewsWebViewController.swift in Sources */,
 				EC9F37A01C0C024C003A4451 /* Black_Fu.xcdatamodeld in Sources */,
+				EC46E4761C296CF600F80103 /* Brand.swift in Sources */,
+				EC46E4791C296CF600F80103 /* Company+CoreDataProperties.swift in Sources */,
+				ECC945641C329D4100EE166D /* NewListViewController.swift in Sources */,
 				EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */,
+				EC46E4731C296CF600F80103 /* Product+CoreDataProperties.swift in Sources */,
+				EC46E4751C296CF600F80103 /* Brand+CoreDataProperties.swift in Sources */,
 				EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */,
+				EC46E4661C2967FB00F80103 /* CoreDataManager.swift in Sources */,
+				EC46E4781C296CF600F80103 /* BarCode.swift in Sources */,
 				ECC65F8B1C0E874C003031CE /* ScanViewController.swift in Sources */,
+				EC46E47E1C2974EC00F80103 /* ProductDetailViewController.swift in Sources */,
+				EC46E4771C296CF600F80103 /* BarCode+CoreDataProperties.swift in Sources */,
+				EC46E47A1C296CF600F80103 /* Company.swift in Sources */,
+				EC46E4741C296CF600F80103 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +666,7 @@
 		};
 		EC9F37C01C0C024C003A4451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD1CD98B096C79BB1C6057B /* Pods-Black-Fu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -523,11 +675,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
 				PRODUCT_NAME = "黑心富";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		EC9F37C11C0C024C003A4451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3E778DFC6189FD72DFC96EB /* Pods-Black-Fu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -536,6 +690,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu";
 				PRODUCT_NAME = "黑心富";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
@@ -666,7 +821,8 @@
 				EC9F379F1C0C024C003A4451 /* Black_Fu.xcdatamodel */,
 			);
 			currentVersion = EC9F379F1C0C024C003A4451 /* Black_Fu.xcdatamodel */;
-			path = Black_Fu.xcdatamodeld;
+			name = Black_Fu.xcdatamodeld;
+			path = "Black-Fu/Black_Fu.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

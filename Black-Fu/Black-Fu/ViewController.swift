@@ -13,7 +13,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var tableView: UITableView!
     
     
-    var tableAry:[String] = ["林鳳營","統一布丁","林老師","大醇豆","36法郎","每日C-柳橙","每日C-葡萄"]
+    var tableAry:[String] = ["林鳳營","統一布丁","大醇豆","36法郎","每日C-柳橙","每日C-葡萄"]
     var tableShowAry:[String] = []
     //MARK: - ViewController 生命週期
     
@@ -23,6 +23,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableShowAry = tableAry
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +41,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let scanViewController = self.storyboard!.instantiateViewControllerWithIdentifier("Scan") as! ScanViewController
         self.navigationController?.pushViewController(scanViewController, animated: true)
     }
+    
+    @IBAction func moreNewList(sender: UIButton) {
+        
+        
+    }
+    
     
     // MARK: - UISearchBar Delegate
 
@@ -70,6 +81,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.textLabel?.text = tableShowAry[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let productDetailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProductDetail") as! ProductDetailViewController
+        
+        productDetailViewController.navigationTitle = tableShowAry[indexPath.row]
+        
+        self.navigationController?.pushViewController(productDetailViewController, animated: true)
+        
     }
 }
 
