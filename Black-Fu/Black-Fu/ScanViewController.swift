@@ -39,9 +39,9 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         resoultFailView = resoultAdd(frame:CGRect(x: 0, y: 0, width:self.view.frame.width*2/3 , height: self.view.frame.height*2/3))
         resoultFailView?.delegate = self
         
-        nextButton.addTarget(self, action: "nextScan", forControlEvents: UIControlEvents.TouchUpInside)
-        backBtn.addTarget(self, action: "back", forControlEvents: UIControlEvents.TouchUpInside)
-        
+        nextButton.addTarget(self, action: "nextScan", forControlEvents: .TouchUpInside)
+        backBtn.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
+        reportBtn.addTarget(self, action: "reportView", forControlEvents: .TouchUpInside)
 
         
         // Do any additional setup after loading the view.
@@ -51,6 +51,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         super.viewWillAppear(animated)
         
         nextButton.enabled = false
+        reportBtn.enabled = false
         self.scanBarCode()
     }
     
@@ -78,13 +79,19 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         captureSession?.startRunning()
         qrCodeFrameView?.frame = CGRectZero
         nextButton.enabled = false
+        reportBtn.enabled = false
     }
     
     func resoultValue(scanString:String) {
         
         self.snapshot()
+        reportBtn.enabled = true
+    }
+    
+    func reportView() {
         
-        self.view.addSubview(resoultFailView!);
+        resoultFailView?.reportProductName.text = ""
+        self.view.addSubview(resoultFailView!)
         resoultFailView?.reportProductName.becomeFirstResponder()
     }
     
@@ -296,11 +303,13 @@ class resoultAdd: UIView , UITextFieldDelegate {
         
     }
     
+    // MARK: - Result Button Event
+
+    
     func enterCancel() {
         delegate?.cancelReportEnter()
     }
     
-    // MARK: - Result Button Event
     
     func enterReport() {
         let mailComposerVC = MFMailComposeViewController()
