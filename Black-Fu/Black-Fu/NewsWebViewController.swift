@@ -23,8 +23,11 @@ class NewsWebViewController: UIViewController,UIWebViewDelegate {
         loadingActivity.center = newsWebView.center
         self.view.addSubview(loadingActivity)
         
-        let requestURL = NSURL(string:loadWebString)
-        let request = NSURLRequest(URL: requestURL!)
+        guard let requestURL = NSURL(string:loadWebString) else {
+            return
+        }
+        
+        let request = NSURLRequest(URL: requestURL)
         newsWebView.loadRequest(request)
         
     }

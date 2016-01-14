@@ -110,6 +110,8 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     
             }
             
+        }else{
+            cell.newsImage.image = UIImage(named: "IMG_3253.JPG")
         }
     }
 
