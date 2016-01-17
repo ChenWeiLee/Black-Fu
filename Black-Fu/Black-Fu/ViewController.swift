@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -18,18 +19,34 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     var longTouching:Bool = false
     var longCell:ProductionCollectionCell = ProductionCollectionCell()
     
-    var tableAry:[String] = ["林鳳營鮮乳","統一布丁","大醇豆","36法郎","每日C-柳橙","每日C-葡萄","VOSSI加拿大冰河水","康師傅","大絕韻瓶裝茶","木崗高品質雞蛋","自然果力果汁","貝納頌咖啡","ABLS優酪乳","味全天然水","味全雞蛋布丁","醇奶布丁系列","味全果汁","廚易料理醬","味全高鮮調味料","味全調味乳","台灣搵醬","味全烤肉醬","味全水餃醬汁","味全甘醇油膏","味全香菇素蠔油","味全優格","鮮Soup","味全鮮乳","林鳳營優酪乳","味全醬油","味全嚴選調味乳","原榨果汁","健康廚房沾拌淋醬","健康廚房調味料","涼爽茶","淬釀醬油","荷頓奶粉","Apas礦質水","LCA506發酵乳"]
-    var tableShowAry:[String] = []
+    var tableShowAry:[Dictionary<String, String>] = [Dictionary<String, String>]()
     var imageDic:[String:UIImage] = [String:UIImage]()
 
-    
+    lazy var lasyProducts:[String:AnyObject] = {
+        
+        do {
+            
+            let productPath:String = NSBundle.mainBundle().pathForResource("Products", ofType: "json")!
+            let jsonData:NSData = NSData(contentsOfFile: productPath)!
+            let anyObj:AnyObject? = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
+            print("\(anyObj)")
+            return anyObj as! [String : AnyObject]
+
+        } catch let error as NSError {
+            print("json error: \(error.localizedDescription)")
+            return [String:AnyObject]()
+        }
+    }()
     
     //MARK: - ViewController 生命週期
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableShowAry = tableAry
+
+        tableShowAry = lasyProducts["Product"] as! Array
+
+
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.delaysContentTouches = false
         collectionView.canCancelContentTouches = true
@@ -59,7 +76,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     
     func longTouchEvent(gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .Ended {
-            print("Ended")
             longTouching = false
             longCell.cancel()
             lasyEffectView.removeFromSuperview()
@@ -84,8 +100,8 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     lazy var lasyEffectView:UIVisualEffectView = {
         // iOS8 系统才有
         let tempEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-        tempEffectView.frame = self.view.bounds;
-        tempEffectView.alpha = 0.8
+        tempEffectView.frame = self.view.bounds
+        tempEffectView.alpha = 0.9
         tempEffectView.userInteractionEnabled = true
         return tempEffectView
     }()
@@ -127,10 +143,10 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
         tableShowAry.removeAll()
         
         if searchText == "" {
-            tableShowAry = tableAry
+            tableShowAry = lasyProducts["Product"] as! Array
         }else{
-            for tableString:String in tableAry {
-                if tableString.rangeOfString(searchText) != nil {
+            for tableString:Dictionary<String, String> in lasyProducts["Product"] as! Array {
+                if tableString["Title"]!.rangeOfString(searchText) != nil {
                     tableShowAry.append(tableString)
                 }
             }
@@ -156,8 +172,11 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCollectionCell", forIndexPath: indexPath) as! ProductionCollectionCell
         
-        cell.image.image = UIImage(named: "IMG_3253.JPG")
-        cell.productName.text = tableShowAry[indexPath.row]
+        self.getCollectionImage(tableShowAry[indexPath.row]["ImageURL"]! as String, cell: cell)
+
+        
+        cell.productName.text = tableShowAry[indexPath.row]["Title"]
+        cell.company = tableShowAry[indexPath.row]["Company"] as String!
         cell.tag = indexPath.row
         cell.superController = self
         
@@ -168,9 +187,43 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         let productDetailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProductDetail") as! ProductDetailViewController
         
-        productDetailViewController.navigationTitle = tableShowAry[indexPath.row]
+        productDetailViewController.navigationTitle = tableShowAry[indexPath.row]["Title"]
         
         self.navigationController?.pushViewController(productDetailViewController, animated: true)
+    }
+    
+    // MARK: - Image Catch
+    
+    func getCollectionImage(imageUrl:String?, cell:ProductionCollectionCell) {
+        
+        cell.image.image = UIImage(named: "IMG_3253.JPG")
+
+        guard let imageUrlString = imageUrl else {
+            return
+        }
+        
+        let imagedic = imageDic[imageUrlString]
+        
+        if imagedic != nil {
+            cell.image.image = imagedic
+        }else{
+            print(" Image Url: \(imageUrl!)")
+            
+            Alamofire.request(.GET, "\(imageUrl!)")
+                .response { request, response, data, error in
+                    
+                    if error == nil {
+                        let image = UIImage(data: data! as NSData)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            cell.image.image = image
+                        })
+                        
+                        self.imageDic[imageUrlString] = image
+                    }
+                    
+            }
+        }
+        
     }
 
 }
@@ -182,6 +235,7 @@ class ProductionCollectionCell: UICollectionViewCell {
     @IBOutlet var image: UIImageView!
     @IBOutlet var productName: UILabel!
     var superController:UIViewController?
+    var company:String = ""
     
     var startPoint:CGPoint = CGPoint()
     var isAddEvent:Bool = false
@@ -189,11 +243,10 @@ class ProductionCollectionCell: UICollectionViewCell {
     var productView:ProductDetailView = ProductDetailView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width-40, height: UIScreen.mainScreen().bounds.size.height/2))
     
     func show(point:CGPoint) {
-        print("\(self.tag)")
         
         productView.productTitle.text = productName.text
         productView.productImage.image = image.image
-        
+        productView.productBrand.text = company
         productView.bringSubviewToFront((superController?.view)!)
         
         
@@ -282,7 +335,6 @@ class ProductDetailView: UIView {
         
         productBrand.frame = CGRect(x: 0, y: frame.height - 45, width: frame.size.width, height: 45)
         productBrand.textAlignment = .Center
-        productBrand.text = "味全"
         productBrand.textColor = UIColor.redColor()
         productBrand.font = UIFont.boldSystemFontOfSize(17.0)
         self.addSubview(productBrand)
