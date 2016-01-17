@@ -17,8 +17,8 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var reportBtn: UIButton!
     
-    var resoultFailView:resoultAdd?
-    
+    var reportSystemView:resoultAdd?
+    var resoultView:resoult?
     
     var captureSession:AVCaptureSession?
     var captureStillImageOutput:AVCaptureStillImageOutput? //Image串流
@@ -27,7 +27,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     
     let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var scanViewBack = UIButton(type: UIButtonType.Custom)
-    
+    var isOpenLight:Bool = false
     
     // Added to support different barcodes
     let supportedBarCodes = [AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeQRCode]
@@ -36,10 +36,12 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGrayColor()
-        resoultFailView = resoultAdd(frame:CGRect(x: 0, y: 0, width:self.view.frame.width*2/3 , height: self.view.frame.height*2/3))
-        resoultFailView?.delegate = self
+        reportSystemView = resoultAdd(frame:CGRect(x: 0, y: 0, width:self.view.frame.width*2/3 , height: self.view.frame.height*2/3))
+        reportSystemView?.delegate = self
         
-        nextButton.addTarget(self, action: "nextScan", forControlEvents: .TouchUpInside)
+        resoultView = resoult(frame: CGRect())
+        resoultView?.superViewController = self
+        
         backBtn.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
         reportBtn.addTarget(self, action: "reportView", forControlEvents: .TouchUpInside)
 
@@ -50,8 +52,9 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        nextButton.enabled = false
+        self.sacnButtonMethod(false)
         reportBtn.enabled = false
+        
         self.scanBarCode()
     }
     
@@ -59,6 +62,11 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         videoPreviewLayer?.frame = scanView.frame
     }
     override func viewDidDisappear(animated: Bool) {
+        isOpenLight = false
+        self.sacnButtonMethod(true)
+
+        self.cameraLight(false)
+        
         videoPreviewLayer?.removeFromSuperlayer()
     }
     
@@ -67,32 +75,101 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         // Dispose of any resources that can be recreated.
     }
     
-
-
     // MARK: - Button Event
+    
+    func sacnButtonMethod(next:Bool) {
+        
+        
+        //這邊用Add的話會重複加入兩個事件
+        if next {
+            nextButton.setTitle("接著掃描", forState: .Normal)
+            nextButton.removeTarget(self, action: "openLight", forControlEvents: .TouchUpInside)
+            nextButton.addTarget(self, action: "nextScan", forControlEvents: .TouchUpInside)
+        }else{
+            nextButton.setTitle("開燈更好拍", forState: .Normal)
+            nextButton.removeTarget(self, action: "nextScan", forControlEvents: .TouchUpInside)
+            nextButton.addTarget(self, action: "openLight", forControlEvents: .TouchUpInside)
+        }
+
+    }
     
     func back() {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func nextScan() {
-        captureSession?.startRunning()
+        resoultView?.cancelAminate()
         qrCodeFrameView?.frame = CGRectZero
-        nextButton.enabled = false
         reportBtn.enabled = false
+
+        self.sacnButtonMethod(false)
+
+        if isOpenLight {
+            self.cameraLight(true)
+        }else{
+            self.cameraLight(false)
+        }
+        captureSession?.startRunning()
+
+    }
+    
+    func openLight() {
+        
+        
+        if captureDevice.torchActive{
+            isOpenLight = false
+            self.cameraLight(false)
+        }else{
+            isOpenLight = true
+            self.cameraLight(true)
+        }
+
+    }
+    
+    func cameraLight(open:Bool) {
+        captureSession?.beginConfiguration()
+        
+        do {
+            try captureDevice.lockForConfiguration()
+        } catch {
+            // handle error
+            return
+        }
+        
+        if open {
+            nextButton.setTitle("省電關閉燈", forState: .Normal)
+            captureDevice.torchMode = .On
+        }else{
+            nextButton.setTitle("開燈更好拍", forState: .Normal)
+            captureDevice.torchMode = .Off
+        }
+        
+        captureDevice.unlockForConfiguration()
+        captureSession?.commitConfiguration()
     }
     
     func resoultValue(scanString:String) {
         
-        self.snapshot()
-        reportBtn.enabled = true
+        if captureDevice.torchAvailable {
+            self.cameraLight(false)
+        }
+        self.sacnButtonMethod(true)
+        
+        if scanString == "4710063334573" {
+            resoultView?.show(true)
+        }else{
+            self.snapshot()
+            reportBtn.enabled = true
+            resoultView?.show(false)
+        }
+
     }
     
     func reportView() {
         
-        resoultFailView?.reportProductName.text = ""
-        self.view.addSubview(resoultFailView!)
-        resoultFailView?.reportProductName.becomeFirstResponder()
+        reportSystemView?.reportProductName.text = ""
+        self.view.addSubview(reportSystemView!)
+        reportSystemView?.reportProductName.becomeFirstResponder()
     }
     
     func snapshot() {
@@ -104,7 +181,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
             (imageSampleBuffer : CMSampleBuffer!, _) in
             
             let imageDataJpeg = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer)
-            self.resoultFailView?.imagesnapshot.image = UIImage(data: imageDataJpeg)!
+            self.reportSystemView?.imagesnapshot.image = UIImage(data: imageDataJpeg)!
         }
         
     }
@@ -112,7 +189,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     // MARK: - Result Delegate
 
     func cancelReportEnter() {
-        resoultFailView?.removeFromSuperview()
+        reportSystemView?.removeFromSuperview()
         self.nextScan()
     }
     
@@ -120,7 +197,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         
         mailController.mailComposeDelegate = self
         self.presentViewController(mailController, animated: true, completion: nil)
-        resoultFailView?.removeFromSuperview()
+        reportSystemView?.removeFromSuperview()
         
     }
     
@@ -345,6 +422,109 @@ class resoultAdd: UIView , UITextFieldDelegate {
 }
 
 class resoult: UIView {
+    var errorBackgroundImage:UIImageView = UIImageView(image: UIImage(named: "blood.png"))
+    var resoultImage:UIImageView = UIImageView()
+    var superViewController:UIViewController?
+    
+    override init(frame: CGRect) {
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height-44))
+        
+        self.backgroundColor = UIColor.clearColor()
+        
+        errorBackgroundImage.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height-60)
+        errorBackgroundImage.alpha = 0
+        self.addSubview(errorBackgroundImage)
+        
+        resoultImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        resoultImage.center = self.center
+        resoultImage.alpha = 0
+        self.addSubview(resoultImage)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
+    
+    // MARK: - Result View Method
+    
+    func cancelAminate() {
+        errorBackgroundImage.alpha = 0
+        resoultImage.alpha = 0
+        self.removeFromSuperview()
+    }
+    
+    func show(resultBool:Bool) {
+        
+        superViewController?.view.addSubview(self)
+        
+        errorBackgroundImage.alpha = 0
+        resoultImage.alpha = 0
+        if resultBool {
+            self.dangerSignalsAnimate()
+        }else{
+            self.friendlySignalsAnimate()
+        }
+        
+    }
+    
+    func friendlySignalsAnimate() {
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.resoultImage.image = UIImage(named: "01.png")
+            self.resoultImage.alpha = 0.2
+        }, completion: { finished in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.resoultImage.image = UIImage(named: "02.png")
+                self.resoultImage.alpha = 0.4
+            }, completion: { finished in
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.resoultImage.image = UIImage(named: "03.png")
+                    self.resoultImage.alpha = 0.6
+                }, completion: { finished in
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        self.resoultImage.image = UIImage(named: "04.png")
+                        self.resoultImage.alpha = 0.8
+                    }, completion: { finished in
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            self.resoultImage.image = UIImage(named: "05.png")
+                            self.resoultImage.alpha = 1.0
+                        })
+                    })
+                })
+            })
+        })
+    }
+    
+    func dangerSignalsAnimate() {
+        
+        UIView.animateWithDuration(1.5, animations: { () -> Void in
+            self.resoultImage.image = UIImage(named: "danger.png")
+            self.resoultImage.alpha = 1.0
+        })
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.errorBackgroundImage.alpha = 1
+        }, completion: { finished in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.errorBackgroundImage.alpha = 0
+            }, completion: { finished in
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.errorBackgroundImage.alpha = 1
+                }, completion: { finished in
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        self.errorBackgroundImage.alpha = 0
+                    }, completion: { finished in
+                        UIView.animateWithDuration(0.3, animations: { () -> Void in
+                            self.errorBackgroundImage.alpha = 1
+                        })
+                    })
+                })
+            })
+        })
+        
+    }
     
 }
 

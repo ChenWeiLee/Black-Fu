@@ -21,6 +21,14 @@
 		EC46E47A1C296CF600F80103 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4721C296CF600F80103 /* Company.swift */; };
 		EC46E47E1C2974EC00F80103 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */; };
 		EC46E4801C297C3700F80103 /* IMG_3253.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EC46E47F1C297C3700F80103 /* IMG_3253.JPG */; };
+		EC6743171C4A7C3100F0D992 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = EC6743161C4A715F00F0D992 /* Products.json */; };
+		EC67431B1C4A9F5100F0D992 /* blood.png in Resources */ = {isa = PBXBuildFile; fileRef = EC67431A1C4A9F5100F0D992 /* blood.png */; };
+		EC67431D1C4B666400F0D992 /* danger.png in Resources */ = {isa = PBXBuildFile; fileRef = EC67431C1C4B666400F0D992 /* danger.png */; };
+		EC6743231C4B66A800F0D992 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = EC67431E1C4B66A800F0D992 /* 01.png */; };
+		EC6743241C4B66A800F0D992 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = EC67431F1C4B66A800F0D992 /* 02.png */; };
+		EC6743251C4B66A800F0D992 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6743201C4B66A800F0D992 /* 03.png */; };
+		EC6743261C4B66A800F0D992 /* 04.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6743211C4B66A800F0D992 /* 04.png */; };
+		EC6743271C4B66A800F0D992 /* 05.png in Resources */ = {isa = PBXBuildFile; fileRef = EC6743221C4B66A800F0D992 /* 05.png */; };
 		EC856F951C3F5A7B00CEE69C /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC856F941C3F5A7B00CEE69C /* NewsWebViewController.swift */; };
 		EC9F37981C0C024C003A4451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37971C0C024C003A4451 /* AppDelegate.swift */; };
 		EC9F379A1C0C024C003A4451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9F37991C0C024C003A4451 /* ViewController.swift */; };
@@ -93,6 +101,14 @@
 		EC46E4721C296CF600F80103 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = ManagedObjct/Company.swift; sourceTree = "<group>"; };
 		EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		EC46E47F1C297C3700F80103 /* IMG_3253.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_3253.JPG; path = ../../../../Downloads/IMG_3253.JPG; sourceTree = "<group>"; };
+		EC6743161C4A715F00F0D992 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		EC67431A1C4A9F5100F0D992 /* blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blood.png; sourceTree = "<group>"; };
+		EC67431C1C4B666400F0D992 /* danger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = danger.png; sourceTree = "<group>"; };
+		EC67431E1C4B66A800F0D992 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		EC67431F1C4B66A800F0D992 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
+		EC6743201C4B66A800F0D992 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
+		EC6743211C4B66A800F0D992 /* 04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04.png; sourceTree = "<group>"; };
+		EC6743221C4B66A800F0D992 /* 05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 05.png; sourceTree = "<group>"; };
 		EC856F941C3F5A7B00CEE69C /* NewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
 		EC9F37941C0C024C003A4451 /* 黑心富.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黑心富.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9F37971C0C024C003A4451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +203,23 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		EC6743181C4A8EF200F0D992 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				ECC65F8A1C0E874C003031CE /* ScanViewController.swift */,
+			);
+			name = Scan;
+			sourceTree = "<group>";
+		};
+		EC6743191C4A8F0800F0D992 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				EC9F37991C0C024C003A4451 /* ViewController.swift */,
+				EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
 		EC9F378B1C0C024C003A4451 = {
 			isa = PBXGroup;
 			children = (
@@ -215,16 +248,23 @@
 		EC9F37961C0C024C003A4451 /* Black-Fu */ = {
 			isa = PBXGroup;
 			children = (
+				EC6743191C4A8F0800F0D992 /* Product */,
+				EC6743181C4A8EF200F0D992 /* Scan */,
 				ECAA4F101C41734B00C05881 /* News */,
 				EC9F37971C0C024C003A4451 /* AppDelegate.swift */,
-				EC9F37991C0C024C003A4451 /* ViewController.swift */,
-				ECC65F8A1C0E874C003031CE /* ScanViewController.swift */,
-				EC46E47D1C2974EC00F80103 /* ProductDetailViewController.swift */,
 				EC9F37A11C0C024C003A4451 /* Assets.xcassets */,
 				EC9F379B1C0C024C003A4451 /* Main.storyboard */,
 				EC9F37A31C0C024C003A4451 /* LaunchScreen.storyboard */,
 				EC9F37A61C0C024C003A4451 /* Info.plist */,
 				EC46E47F1C297C3700F80103 /* IMG_3253.JPG */,
+				EC67431A1C4A9F5100F0D992 /* blood.png */,
+				EC67431C1C4B666400F0D992 /* danger.png */,
+				EC67431E1C4B66A800F0D992 /* 01.png */,
+				EC67431F1C4B66A800F0D992 /* 02.png */,
+				EC6743201C4B66A800F0D992 /* 03.png */,
+				EC6743211C4B66A800F0D992 /* 04.png */,
+				EC6743221C4B66A800F0D992 /* 05.png */,
+				EC6743161C4A715F00F0D992 /* Products.json */,
 			);
 			path = "Black-Fu";
 			sourceTree = "<group>";
@@ -367,7 +407,7 @@
 				TargetAttributes = {
 					EC9F37931C0C024C003A4451 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = VU6M4VS6KK;
+						DevelopmentTeam = HU5PMM7Z88;
 					};
 					EC9F37AA1C0C024C003A4451 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -379,6 +419,7 @@
 					};
 					ECD791561C0DB5B900E91677 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = HU5PMM7Z88;
 					};
 				};
 			};
@@ -408,10 +449,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6743251C4B66A800F0D992 /* 03.png in Resources */,
+				EC6743171C4A7C3100F0D992 /* Products.json in Resources */,
+				EC6743271C4B66A800F0D992 /* 05.png in Resources */,
 				EC46E4801C297C3700F80103 /* IMG_3253.JPG in Resources */,
+				EC6743261C4B66A800F0D992 /* 04.png in Resources */,
+				EC6743231C4B66A800F0D992 /* 01.png in Resources */,
+				EC67431B1C4A9F5100F0D992 /* blood.png in Resources */,
 				EC9F37A51C0C024C003A4451 /* LaunchScreen.storyboard in Resources */,
+				EC67431D1C4B666400F0D992 /* danger.png in Resources */,
 				EC9F37A21C0C024C003A4451 /* Assets.xcassets in Resources */,
 				EC9F379D1C0C024C003A4451 /* Main.storyboard in Resources */,
+				EC6743241C4B66A800F0D992 /* 02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,10 +794,13 @@
 		ECD791651C0DB5BA00E91677 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Fast-Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu.Fast-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -756,10 +808,13 @@
 		ECD791661C0DB5BA00E91677 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Fast-Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.enoch.Black-Fu.Fast-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
