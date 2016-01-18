@@ -127,6 +127,11 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
     }
     
     func cameraLight(open:Bool) {
+        
+        if captureSession == nil || captureDevice == nil {
+            return
+        }
+        
         captureSession?.beginConfiguration()
         
         do {
