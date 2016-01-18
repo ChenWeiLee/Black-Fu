@@ -176,9 +176,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCollectionCell", forIndexPath: indexPath) as! ProductionCollectionCell
         
-//        self.getCollectionImage(tableShowAry[indexPath.row]["ImageURL"]! as String, cell: cell)
-        
-        
         cell.image.sd_setImageWithURL(NSURL(string: tableShowAry[indexPath.row]["ImageURL"]! as String), placeholderImage: UIImage(named: "icon 6.png"))
         cell.productName.text = tableShowAry[indexPath.row]["Title"]
         cell.company = tableShowAry[indexPath.row]["Company"] as String!
@@ -197,40 +194,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
         self.navigationController?.pushViewController(productDetailViewController, animated: true)
     }
     
-    // MARK: - Image Catch
-    
-    func getCollectionImage(imageUrl:String?, cell:ProductionCollectionCell) {
-        
-        cell.image.image = UIImage(named: "IMG_3253.JPG")
-
-        guard let imageUrlString = imageUrl else {
-            return
-        }
-        
-        let imagedic = imageDic[imageUrlString]
-        
-        if imagedic != nil {
-            cell.image.image = imagedic
-        }else{
-            print(" Image Url: \(imageUrl!)")
-            
-            Alamofire.request(.GET, "\(imageUrl!)")
-                .response { request, response, data, error in
-                    
-                    if error == nil {
-                        let image = UIImage(data: data! as NSData)
-                        self.imageDic[imageUrlString] = image
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            cell.image.image = image
-                        })
-                        
-                    }
-                    
-            }
-        }
-        
-    }
-
 }
 
 

@@ -54,7 +54,9 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         cell?.newsTitle.text = dataDic["Title"] as? String
         cell?.newsTime.text = dataDic["Time"] as? String
-        self.getNewsImage(dataDic, cell: cell!);
+        
+        cell!.newsImage.sd_setImageWithURL(NSURL(string: dataDic["imageURL"]! as! String), placeholderImage: UIImage(named: "icon 6.png"))
+
         
         return cell ?? UITableViewCell(style: .Default, reuseIdentifier: "CELL")
     }
@@ -91,30 +93,6 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    func getNewsImage(newsDic:NSDictionary, cell:NewCell) {
-        
-        let imageUrl = newsDic["imageURL"]
-        
-        if imageUrl?.length != 0 {
-            print(" Image Url: \(imageUrl!)")
-            
-            Alamofire.request(.GET, "\(imageUrl!)")
-                .response { request, response, data, error in
-                    
-                    if error == nil {
-                        let image = UIImage(data: data! as NSData)
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            cell.newsImage.image = image
-                        })
-                    }
-                    
-            }
-            
-        }else{
-            cell.newsImage.image = UIImage(named: "IMG_3253.JPG")
-        }
-    }
-
 }
 
 
