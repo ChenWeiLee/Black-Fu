@@ -66,6 +66,40 @@ class CoreDataSingleton {
         return managedObjectContext
     }()
     
+    // MARK: - CRUD Method
+    
+    func searchIsInEntity(entity:String, stringElement:String ,value:String) -> Bool {
+        
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        
+        fetchRequest.predicate = NSPredicate(format: "%@==%@",stringElement , value)
+        
+        do{
+            let result = try managedObjectContext.executeFetchRequest(fetchRequest)
+            
+            if result.count > 0{
+                return true
+            }else{
+                return false
+            }
+        }catch{
+            return false
+        }
+        
+    }
+    
+    func insertEntity() {
+        
+    }
+    
+    func updateEntity() {
+        
+    }
+    
+    func deleteEntity() {
+        
+    }
+    
     // MARK: - Core Data Saving support
     
     func saveContext () {
@@ -81,6 +115,8 @@ class CoreDataSingleton {
             }
         }
     }
+    
+    
     
     
 }
