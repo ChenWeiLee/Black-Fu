@@ -15,6 +15,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchCancelBtn: UIButton!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var scanButton: UIButton!
     
     var longTouching:Bool = false
     var longCell:ProductionCollectionCell = ProductionCollectionCell()
@@ -52,6 +53,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
         collectionView.canCancelContentTouches = true
         searchCancelBtn.addTarget(self, action: "cancelSearchBtn", forControlEvents: .TouchUpInside)
         
+        
+        scanButton.layer.masksToBounds = true
+        scanButton.layer.cornerRadius = scanButton.frame.width/2
         
         let gesture = UILongPressGestureRecognizer(target: self, action: "longTouchEvent:")
         gesture.delegate = self
@@ -214,11 +218,11 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
                     
                     if error == nil {
                         let image = UIImage(data: data! as NSData)
+                        self.imageDic[imageUrlString] = image
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             cell.image.image = image
                         })
                         
-                        self.imageDic[imageUrlString] = image
                     }
                     
             }
@@ -256,8 +260,6 @@ class ProductionCollectionCell: UICollectionViewCell {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             
             self.productView.frame = self.calculateDirection(point)
-        }, completion: { finished in
-                
                 
         })
     }
@@ -317,7 +319,7 @@ class ProductDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame:frame)
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor(red: 0.49, green: 0.87, blue: 0.83, alpha: 1.0)
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 15.0
         
