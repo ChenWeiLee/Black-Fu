@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SDWebImage
 
 class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate {
     
@@ -176,9 +176,10 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCollectionCell", forIndexPath: indexPath) as! ProductionCollectionCell
         
-        self.getCollectionImage(tableShowAry[indexPath.row]["ImageURL"]! as String, cell: cell)
-
+//        self.getCollectionImage(tableShowAry[indexPath.row]["ImageURL"]! as String, cell: cell)
         
+        
+        cell.image.sd_setImageWithURL(NSURL(string: tableShowAry[indexPath.row]["ImageURL"]! as String), placeholderImage: UIImage(named: "icon 6.png"))
         cell.productName.text = tableShowAry[indexPath.row]["Title"]
         cell.company = tableShowAry[indexPath.row]["Company"] as String!
         cell.tag = indexPath.row
