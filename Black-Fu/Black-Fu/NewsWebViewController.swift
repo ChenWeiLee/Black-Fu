@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class NewsWebViewController: UIViewController,UIWebViewDelegate {
     
@@ -15,12 +16,14 @@ class NewsWebViewController: UIViewController,UIWebViewDelegate {
     
     var loadWebString:String = String()
     
-    var loadingActivity:UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    var loadingActivity:NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: .BallClipRotatePulse, color: UIColor(red: 0.49, green: 0.87, blue: 0.47, alpha: 1.0), size: CGSizeMake(100, 100))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadingActivity.center = newsWebView.center
+        
+        
+        loadingActivity.center = self.view.center
         self.view.addSubview(loadingActivity)
         
         guard let requestURL = NSURL(string:loadWebString) else {
@@ -33,18 +36,18 @@ class NewsWebViewController: UIViewController,UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        loadingActivity.startAnimating()
+        loadingActivity.startAnimation()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?){
         
-        loadingActivity.stopAnimating()
+        loadingActivity.stopAnimation()
         print("\(error)")
     }
 
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        loadingActivity.stopAnimating()
+        loadingActivity.stopAnimation()
     }
     
 }

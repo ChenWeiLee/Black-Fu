@@ -8,12 +8,15 @@
 
 import UIKit
 import Alamofire
+import NVActivityIndicatorView
 
 class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var newsTableView: UITableView!
     
     var news:NSArray = NSArray()
+    var loadingActivity:NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: .BallClipRotatePulse, color: UIColor(red: 0.49, green: 0.87, blue: 0.47, alpha: 1.0), size: CGSizeMake(100, 100))
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,8 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.navigationBar.topItem?.title = "新聞"
-        
+        self.view.addSubview(loadingActivity)
+        loadingActivity.center = self.view.center
         self.getNewsData()
         
         print("\(newsTableView.frame.origin.y)")
@@ -77,6 +81,8 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
     // MARK: - Get News Infornation
     
     func getNewsData() {
+        loadingActivity.startAnimation()
+        
         Alamofire.request(.GET, "https://dl.dropboxusercontent.com/u/52019782/BlackFuNew.json")
             .responseJSON { response in
 //                print(response.request)  // original URL request
@@ -89,6 +95,7 @@ class NewListViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     self.news = JSON["News"] as! NSArray
                     
                     self.newsTableView.reloadData()
+                    self.loadingActivity.stopAnimation()
                 }
         }
     }
