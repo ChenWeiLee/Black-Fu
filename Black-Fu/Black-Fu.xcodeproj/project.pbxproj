@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1075065499990CA089A1140 /* Pods_Black_Fu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72F60D08B1A0F193DB44BFB /* Pods_Black_Fu.framework */; };
+		EC0990E11C52940D00576906 /* singletonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0990E01C52940D00576906 /* singletonObject.swift */; };
 		EC46E4661C2967FB00F80103 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46E4651C2967FA00F80103 /* CoreDataManager.swift */; };
 		EC46E4681C296A0100F80103 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC46E4671C296A0100F80103 /* CoreData.framework */; };
 		EC46E46A1C296AF700F80103 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC46E4691C296AF700F80103 /* libsqlite3.tbd */; };
@@ -88,6 +89,7 @@
 		2BD1CD98B096C79BB1C6057B /* Pods-Black-Fu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black-Fu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E778DFC6189FD72DFC96EB /* Pods-Black-Fu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black-Fu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Black-Fu/Pods-Black-Fu.release.xcconfig"; sourceTree = "<group>"; };
 		D72F60D08B1A0F193DB44BFB /* Pods_Black_Fu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Black_Fu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0990E01C52940D00576906 /* singletonObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singletonObject.swift; sourceTree = "<group>"; };
 		EC46E4651C2967FA00F80103 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "Black-Fu/CoreDataManager.swift"; sourceTree = "<group>"; };
 		EC46E4671C296A0100F80103 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EC46E4691C296AF700F80103 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -265,6 +267,7 @@
 				EC6743211C4B66A800F0D992 /* 04.png */,
 				EC6743221C4B66A800F0D992 /* 05.png */,
 				EC6743161C4A715F00F0D992 /* Products.json */,
+				EC0990E01C52940D00576906 /* singletonObject.swift */,
 			);
 			path = "Black-Fu";
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			files = (
 				EC856F951C3F5A7B00CEE69C /* NewsWebViewController.swift in Sources */,
 				EC9F37A01C0C024C003A4451 /* Black_Fu.xcdatamodeld in Sources */,
+				EC0990E11C52940D00576906 /* singletonObject.swift in Sources */,
 				EC46E4761C296CF600F80103 /* Brand.swift in Sources */,
 				EC46E4791C296CF600F80103 /* Company+CoreDataProperties.swift in Sources */,
 				ECC945641C329D4100EE166D /* NewListViewController.swift in Sources */,

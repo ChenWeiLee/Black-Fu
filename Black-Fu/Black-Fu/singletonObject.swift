@@ -10,4 +10,10 @@ import UIKit
 
 class singletonObject: NSObject {
 
+    
+    static let sharedInstance = singletonObject()
+    
+    var productsDic:NSArray = NSArray()
+    
+
 }

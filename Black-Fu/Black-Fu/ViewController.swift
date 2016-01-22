@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import NVActivityIndicatorView
 
 class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate {
     
@@ -23,6 +24,10 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     var tableShowAry:[Dictionary<String, String>] = [Dictionary<String, String>]()
     var imageDic:[String:UIImage] = [String:UIImage]()
 
+    let singletonProducts = singletonObject.sharedInstance
+    var loadingActivity:NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: .BallClipRotatePulse, color: UIColor(red: 0.49, green: 0.87, blue: 0.47, alpha: 1.0), size: CGSizeMake(100, 100))
+
+    
     lazy var lasyProducts:[String:AnyObject] = {
         
         do {
@@ -44,9 +49,10 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        tableShowAry = lasyProducts["Product"] as! Array
-
+        self.view.addSubview(loadingActivity)
+        loadingActivity.center = self.view.center
+        loadingActivity.startAnimation()
+        self.getData()
 
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.delaysContentTouches = false
@@ -147,9 +153,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
         tableShowAry.removeAll()
         
         if searchText == "" {
-            tableShowAry = lasyProducts["Product"] as! Array
+            tableShowAry = singletonProducts.productsDic as! [Dictionary<String, String>] 
         }else{
-            for tableString:Dictionary<String, String> in lasyProducts["Product"] as! Array {
+            for tableString:Dictionary<String, String> in singletonProducts.productsDic as! [Dictionary<String, String>]{
                 if tableString["Title"]!.rangeOfString(searchText) != nil {
                     tableShowAry.append(tableString)
                 }
@@ -192,6 +198,26 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UICollectionV
         productDetailViewController.navigationTitle = tableShowAry[indexPath.row]["Title"]
         
         self.navigationController?.pushViewController(productDetailViewController, animated: true)
+    }
+    
+    
+    //MARK : - Get Data
+    
+    func getData() {
+        
+        Alamofire.request(.GET, "https://dl.dropboxusercontent.com/u/52019782/Products.json")
+            .responseJSON { response in
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                    self.singletonProducts.productsDic = JSON["Product"] as! NSArray
+                    self.tableShowAry = (JSON["Product"] as! NSArray)as! [Dictionary<String, String>]
+                    self.collectionView.reloadData()
+                }
+                self.loadingActivity.stopAnimation()
+
+        }
+        
     }
     
 }
