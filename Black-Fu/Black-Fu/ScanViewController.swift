@@ -165,6 +165,7 @@ class ScanViewController: UIViewController ,ResultDelegate ,MFMailComposeViewCon
         }else{
             self.snapshot()
             reportBtn.enabled = true
+            reportSystemView?.barCode = scanString
             resoultView?.show(false)
         }
 
@@ -334,7 +335,7 @@ class resoultAdd: UIView , UITextFieldDelegate {
     
     var cancelReportBtn = UIButton(type: .Custom)
     var reportBtn = UIButton(type: .Custom)
-    
+    var barCode:String = ""
 
     
     override init(frame: CGRect) {
@@ -398,7 +399,7 @@ class resoultAdd: UIView , UITextFieldDelegate {
 
         mailComposerVC.setToRecipients(["blackheartfu@gmail.com"])
         mailComposerVC.setSubject("回報有問題的商品")
-        mailComposerVC.setMessageBody("此商品『\(reportProductName.text ?? "")』未在此“黑心富”App找到，但它是有問題商品。", isHTML: false)
+        mailComposerVC.setMessageBody("此商品『\(reportProductName.text ?? "")』未在此“黑心富”App找到，但它是有問題商品。\n回報編號：\(barCode)", isHTML: false)
         mailComposerVC.addAttachmentData(UIImagePNGRepresentation(imagesnapshot.image!)!, mimeType: "image/png", fileName: "reportImage")
         
         delegate?.reportEnter(mailComposerVC)
