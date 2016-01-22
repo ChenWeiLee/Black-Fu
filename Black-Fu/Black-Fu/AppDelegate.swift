@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        self.getData()
         
         return true
     }
@@ -64,21 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - get Data from server and Enter Core Data
     
-    func getData() {
-        
-      let coreData = CoreDataSingleton.sharedInstance()
-        
-        Alamofire.request(.GET, "https://dl.dropboxusercontent.com/u/52019782/BlackFuNew.json")
-            .responseJSON { response in
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                    coreData.insertEntity()
-                    
-                }
-        }
-        
-    }
+
 
 }
 
